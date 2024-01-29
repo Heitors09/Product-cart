@@ -10,7 +10,7 @@ export function ShowProducts() {
     setamount((prevAmount) => ({
       ...prevAmount,
       [productId]: (prevAmount[productId] || 0) + 1,
-      //cria um objeto de amount que copia os valores com spread, cria uma propiedade com o valor de productId
+      //cria um objeto de amount que copia os valores com spread, cria uma propiedade com o valor de productId como chave
       //checa se essa propiedade com o valor de productId existe, caso aconteça de não existir seu valor será 0 e após +1
       //se essa propiedade já tiver um valor, pega esse valor atual e acrescenta "1"
     }));
@@ -25,8 +25,7 @@ export function ShowProducts() {
     }
   }
 
-  console.log(amount);
-
+  //no h3 abaixo, pega o valor associado a consulta amount[product.id] e retorna caso não exista, virá 0
   return (
     <>
       {products.map((product) => (
